@@ -8,6 +8,7 @@ import { useRenderMenuItem } from './components/useRenderMenuItem'
 import { useRouter } from 'vue-router'
 import { isUrl } from '@/utils/is'
 import { useDesign } from '@/hooks/web/useDesign'
+import { Collapse } from '@/components/Collapse'
 
 const { getPrefixCls } = useDesign()
 
@@ -74,7 +75,7 @@ export default defineComponent({
       if (unref(layout) === 'top') {
         return renderMenu()
       } else {
-        return <ElScrollbar>{renderMenu()}</ElScrollbar>
+        return <ElScrollbar style="height: calc(100% - 40px)">{renderMenu()}</ElScrollbar>
       }
     }
 
@@ -115,6 +116,7 @@ export default defineComponent({
         ]}
       >
         {renderMenuWrap()}
+        <Collapse class="bottom-collapse-item" color="#ffffff"></Collapse>
       </div>
     )
   }
@@ -123,6 +125,13 @@ export default defineComponent({
 
 <style lang="less" scoped>
 @prefix-cls: ~'@{namespace}-menu';
+
+.bottom-collapse-item {
+  height: 40px;
+  padding: 13px 0 0 23px;
+  border-top: 1px solid #131b24;
+  box-sizing: border-box;
+}
 
 .is-active--after {
   position: absolute;

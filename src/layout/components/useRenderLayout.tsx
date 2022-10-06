@@ -108,6 +108,7 @@ export const useRenderLayout = () => {
       <>
         <div class="flex items-center bg-[var(--top-header-bg-color)] border-bottom-1 border-solid border-[var(--top-tool-border-color)] dark:border-[var(--el-border-color)]">
           {logo.value ? <Logo class="hover-tigger !pr-15px"></Logo> : undefined}
+          <img src="/src/assets/imgs/icon_title.png" alt="" class="h-36px ml-17px" />
 
           <ToolHeader class="flex-1"></ToolHeader>
         </div>

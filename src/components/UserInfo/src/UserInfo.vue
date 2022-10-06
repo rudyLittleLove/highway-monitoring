@@ -38,9 +38,9 @@ const loginOut = () => {
     .catch(() => {})
 }
 
-const toDocument = () => {
-  window.open('https://element-plus-admin-doc.cn/')
-}
+// const toDocument = () => {
+//   window.open('https://element-plus-admin-doc.cn/')
+// }
 </script>
 
 <template>
@@ -55,10 +55,10 @@ const toDocument = () => {
     </div>
     <template #dropdown>
       <ElDropdownMenu>
-        <ElDropdownItem>
+        <!-- <ElDropdownItem>
           <div @click="toDocument">{{ t('common.document') }}</div>
-        </ElDropdownItem>
-        <ElDropdownItem divided>
+        </ElDropdownItem> -->
+        <ElDropdownItem>
           <div @click="loginOut">{{ t('common.loginOut') }}</div>
         </ElDropdownItem>
       </ElDropdownMenu>

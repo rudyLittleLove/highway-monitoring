@@ -2,7 +2,9 @@
 import { reactive, ref, unref, watch } from 'vue'
 import { Form } from '@/components/Form'
 import { useI18n } from '@/hooks/web/useI18n'
-import { ElButton, ElCheckbox, ElLink } from 'element-plus'
+import { ElButton } from 'element-plus'
+// , ElCheckbox, ElLink
+import { useIcon } from '@/hooks/web/useIcon'
 import { useForm } from '@/hooks/web/useForm'
 import { loginApi, getTestRoleApi, getAdminRoleApi } from '@/api/login'
 import { useCache } from '@/hooks/web/useCache'
@@ -15,7 +17,7 @@ import { useValidator } from '@/hooks/web/useValidator'
 
 const { required } = useValidator()
 
-const emit = defineEmits(['to-register'])
+// const emit = defineEmits(['to-register'])
 
 const appStore = useAppStore()
 
@@ -41,19 +43,18 @@ const schema = reactive<FormSchema[]>([
   },
   {
     field: 'username',
-    label: t('login.username'),
     value: 'admin',
     component: 'Input',
     colProps: {
       span: 24
     },
     componentProps: {
-      placeholder: t('login.usernamePlaceholder')
+      placeholder: t('login.usernamePlaceholder'),
+      prefixIcon: useIcon({ icon: 'ep:user', color: '#d8e3e9', size: 18 })
     }
   },
   {
     field: 'password',
-    label: t('login.password'),
     value: 'admin',
     component: 'InputPassword',
     colProps: {
@@ -63,46 +64,47 @@ const schema = reactive<FormSchema[]>([
       style: {
         width: '100%'
       },
-      placeholder: t('login.passwordPlaceholder')
+      placeholder: t('login.passwordPlaceholder'),
+      prefixIcon: useIcon({ icon: 'ep:lock', color: '#d8e3e9', size: 18 })
     }
   },
-  {
-    field: 'tool',
-    colProps: {
-      span: 24
-    }
-  },
+  // {
+  //   field: 'tool',
+  //   colProps: {
+  //     span: 24
+  //   }
+  // },
   {
     field: 'login',
     colProps: {
       span: 24
     }
-  },
-  {
-    field: 'other',
-    component: 'Divider',
-    label: t('login.otherLogin'),
-    componentProps: {
-      contentPosition: 'center'
-    }
-  },
-  {
-    field: 'otherIcon',
-    colProps: {
-      span: 24
-    }
   }
+  // {
+  //   field: 'other',
+  //   component: 'Divider',
+  //   label: t('login.otherLogin'),
+  //   componentProps: {
+  //     contentPosition: 'center'
+  //   }
+  // },
+  // {
+  //   field: 'otherIcon',
+  //   colProps: {
+  //     span: 24
+  //   }
+  // }
 ])
 
-const iconSize = 30
+// const iconSize = 30
 
-const remember = ref(false)
+// const remember = ref(false)
 
 const { register, elFormRef, methods } = useForm()
 
 const loading = ref(false)
 
-const iconColor = '#999'
+// const iconColor = '#999'
 
 const redirect = ref<string>('')
 
@@ -178,9 +180,9 @@ const getRole = async () => {
 }
 
 // 去注册页面
-const toRegister = () => {
-  emit('to-register')
-}
+// const toRegister = () => {
+//   emit('to-register')
+// }
 </script>
 
 <template>
@@ -190,34 +192,34 @@ const toRegister = () => {
     label-position="top"
     hide-required-asterisk
     size="large"
-    class="dark:(border-1 border-[var(--el-border-color)] border-solid)"
+    class="dark:(border-1 border-[var(--el-border-color)] border-solid) login-card"
     @register="register"
   >
     <template #title>
-      <h2 class="text-2xl font-bold text-center w-[100%]">{{ t('login.login') }}</h2>
+      <div class="text-xl text-center w-[100%] p-30px">{{ t('login.login') }}</div>
     </template>
 
-    <template #tool>
+    <!-- <template #tool>
       <div class="flex justify-between items-center w-[100%]">
         <ElCheckbox v-model="remember" :label="t('login.remember')" size="small" />
         <ElLink type="primary" :underline="false">{{ t('login.forgetPassword') }}</ElLink>
       </div>
-    </template>
+    </template> -->
 
     <template #login>
-      <div class="w-[100%]">
-        <ElButton :loading="loading" type="primary" class="w-[100%]" @click="signIn">
+      <div class="w-[100%] pt-30px pb-30px">
+        <ElButton :loading="loading" type="primary" class="w-[100%]" round @click="signIn">
           {{ t('login.login') }}
         </ElButton>
       </div>
-      <div class="w-[100%] mt-15px">
+      <!-- <div class="w-[100%] mt-15px">
         <ElButton class="w-[100%]" @click="toRegister">
           {{ t('login.register') }}
         </ElButton>
-      </div>
+      </div> -->
     </template>
 
-    <template #otherIcon>
+    <!-- <template #otherIcon>
       <div class="flex justify-between w-[100%]">
         <Icon
           icon="ant-design:github-filled"
@@ -244,11 +246,21 @@ const toRegister = () => {
           class="cursor-pointer anticon"
         />
       </div>
-    </template>
+    </template> -->
   </Form>
 </template>
 
 <style lang="less" scoped>
+.login-card {
+  :deep(.el-col-24) {
+    padding: 5px 35px !important;
+  }
+
+  :deep(.el-input__wrapper) {
+    box-shadow: 0 0 0 2px #e6edf1;
+  }
+}
+
 :deep(.anticon) {
   &:hover {
     color: var(--el-color-primary) !important;

@@ -64,7 +64,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
     children: [
       {
         path: '/cockpit/index',
-        component: () => import('@/views/Cockpit/Index.vue'),
+        component: () => import('@/views/Cockpit/Index/Index.vue'),
         name: 'CockpitIndex',
         meta: {
           title: '驾驶舱首页'

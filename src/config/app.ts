@@ -70,7 +70,7 @@ export const appModules: AppState = {
   greyMode: false, // 是否开始灰色模式，用于特殊悼念日
   dynamicRouter: wsCache.get('dynamicRouter') || false, // 是否动态路由
 
-  layout: 'topLeft' || wsCache.get('layout') || 'topLeft', // layout布局
+  layout: wsCache.get('layout') || 'topLeft', // layout布局
   isDark: wsCache.get('isDark') || false, // 是否是暗黑模式
   currentSize: wsCache.get('default') || 'default', // 组件尺寸
   theme: wsCache.get('theme') || {
@@ -99,7 +99,7 @@ export const appModules: AppState = {
     // 头部字体颜色
     topHeaderTextColor: '#ffffff',
     // 头部悬停颜色
-    topHeaderHoverColor: '#001529',
+    topHeaderHoverColor: 'transparent',
     // 头部边框颜色
     topToolBorderColor: '#001529'
   }

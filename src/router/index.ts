@@ -52,6 +52,25 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
       title: '404',
       noTagsView: true
     }
+  },
+  {
+    path: '/cockpit',
+    component: () => import('@/views/Cockpit/Cockpit.vue'),
+    redirect: '/cockpit/index',
+    name: 'Cockpit',
+    meta: {
+      title: '驾驶舱'
+    },
+    children: [
+      {
+        path: '/cockpit/index',
+        component: () => import('@/views/Cockpit/Index.vue'),
+        name: 'CockpitIndex',
+        meta: {
+          title: '驾驶舱首页'
+        }
+      }
+    ]
   }
 ]
 

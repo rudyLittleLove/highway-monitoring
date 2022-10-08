@@ -1,5 +1,5 @@
 <script setup lang="ts">
-import { ref } from 'vue'
+import { ref, onUnmounted } from 'vue'
 import ToolHeader from '@/layout/components/ToolHeader.vue'
 import dayjs from 'dayjs'
 import { ElDivider } from 'element-plus'
@@ -7,7 +7,8 @@ import { ElDivider } from 'element-plus'
 const time = ref<string>('')
 const week = ref<string>('')
 const yearToDate = ref<string>('')
-
+var timer: any = ''
+// 自动更新时间
 const getNewDate: () => void = () => {
   let date = new Date()
 
@@ -16,18 +17,35 @@ const getNewDate: () => void = () => {
   week.value = dayjs(date).format('ddd')
 
   yearToDate.value = dayjs(date).format('YYYY/MM/DD')
-  setTimeout(() => {
+  timer = setTimeout(() => {
     getNewDate()
   }, 1000)
 }
 getNewDate()
+
+// 自适应页面
+const scaleStyle = ref<string>('')
+const calcScale: () => void = () => {
+  console.log(1)
+  let winW = window.innerWidth
+
+  let scale = winW / 2560
+  scaleStyle.value = `transform: scale(${scale},${scale});`
+}
+calcScale()
+window.addEventListener('resize', calcScale)
+
+onUnmounted(() => {
+  window.removeEventListener('resize', calcScale)
+  clearTimeout(timer)
+})
 </script>
 
 <template>
-  <div class="cockpit-home">
+  <div class="cockpit-home" :style="scaleStyle">
     <div class="cockpit-header">
       <div class="cockpit-header-content flex items-center justify-between">
-        <img src="/src/assets/imgs/icon_title.png" alt="" class="h-45px ml-17px" />
+        <img src="/src/assets/imgs/icon_title.png" alt="" class="h-58px ml-46px mt-10px" />
         <div class="cockpit-menu">
           <ul>
             <li class="active">首页</li>
@@ -58,18 +76,26 @@ getNewDate()
 
 <style lang="less" scoped>
 .cockpit-home {
-  height: 100%;
+  width: 2560px;
+  height: 1080px;
+  position: fixed;
+  left: 0;
+  top: 0;
+  transform-origin: 0 0;
   background-image: url('/src/assets/imgs/screen_bg.png');
-  background-size: cover;
+  background-size: 100% 100%;
 
   .cockpit-header {
-    height: 137px;
+    height: 182px;
     background-image: url('/src/assets/imgs/banner_bg.png');
-    background-size: 100% auto;
+    background-size: 100% 100%;
+    .cockpit-header-content {
+      height: 60px;
+    }
 
     .cockpit-menu {
-      width: calc(100% - 700px);
-      height: 40px;
+      width: 1650px;
+      height: 60px;
 
       ul {
         height: 100%;
@@ -77,16 +103,18 @@ getNewDate()
 
       li {
         float: left;
-        width: 142px;
+        width: 220px;
         height: 100%;
-        padding-top: 7px;
+        padding-top: 20px;
+        line-height: 1;
         font-style: italic;
         color: #9bb5db;
         text-align: center;
         cursor: pointer;
+        font-size: 22px;
 
         & + li {
-          margin-left: -28px;
+          margin-left: -50px;
         }
 
         &.active,
@@ -98,6 +126,7 @@ getNewDate()
       }
     }
     .top-right {
+      padding-right: 20px;
       .row {
         display: flex;
         color: #ffffff;
@@ -116,8 +145,9 @@ getNewDate()
       .line {
         height: 1px;
         background-color: #1bd0fe;
-        margin-top: 3px;
-        margin-right: 10px;
+        // margin-top: 3px;
+        transform: translateY(5px);
+        margin-right: 5px;
         span {
           float: left;
           width: 6px;
@@ -146,8 +176,8 @@ getNewDate()
   }
 
   .cockpit-body {
-    height: calc(100% - 50px);
-    margin-top: -87px;
+    height: calc(100% - 60px);
+    margin-top: -122px;
   }
 }
 </style>

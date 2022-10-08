@@ -15,7 +15,7 @@ import RightColumn from './RightColumn.vue'
 <style lang="less" scoped>
 .cockpit-index {
   height: 100%;
-  padding: 20px 30px;
+  padding: 30px 46px;
 
   &.columns {
     display: flex;

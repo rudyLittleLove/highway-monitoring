@@ -62,30 +62,38 @@ const tableData: any = [
 
 <template>
   <div class="left-column">
-    <div class="item-title">数据统计</div>
+    <div class="item-title">
+      <span>数据统计</span>
+    </div>
     <div class="data-statistics">
       <div class="column">
         <img src="@/assets/imgs/accident_icon.png" alt="" />
         <div class="column-info">
-          <div class="title">累计拥堵时长</div>
+          <div class="title">
+            <span>累计拥堵时长</span>
+          </div>
           <div class="text">
             <span class="num linear-text">46分钟</span>
-            <span class="ratio"><i class="triangle top"></i>3.9%</span>
+            <span class="ratio"><i class="triangle top"></i><span>3.9%</span></span>
           </div>
         </div>
       </div>
       <div class="column">
         <img src="@/assets/imgs/accident_icon.png" alt="" />
         <div class="column-info">
-          <div class="title">今日事故报警</div>
+          <div class="title">
+            <span>今日事故报警</span>
+          </div>
           <div class="text">
             <span class="num linear-text">46起</span>
-            <span class="ratio"><i class="triangle bottom"></i>3.9%</span>
+            <span class="ratio"><i class="triangle bottom"></i><span>3.9%</span></span>
           </div>
         </div>
       </div>
     </div>
-    <div class="item-title">拥堵排行</div>
+    <div class="item-title">
+      <span>拥堵排行</span>
+    </div>
     <div class="jam-top">
       <ul>
         <li v-for="(item, i) in jamTop" :key="i">
@@ -99,7 +107,9 @@ const tableData: any = [
         </li>
       </ul>
     </div>
-    <div class="item-title">实时事件报警</div>
+    <div class="item-title">
+      <span>实时事件报警</span>
+    </div>
     <div class="real-time-alarm">
       <table>
         <thead>
@@ -125,23 +135,22 @@ const tableData: any = [
 
 <style lang="less" scoped>
 .left-column {
-  width: 400px;
-  padding: 20px 25px;
+  width: 532px;
+  padding: 20px 34px;
   background-image: url('/src/assets/imgs/L.png');
   background-size: 100% 100%;
 
   .data-statistics {
     display: flex;
-    padding: 25px 0;
+    padding: 30px 0;
     justify-content: space-between;
 
     .column {
       display: flex;
       width: 45%;
-      justify-content: space-between;
 
       > img {
-        width: 75px;
+        width: 100px;
         height: auto;
       }
 
@@ -150,20 +159,39 @@ const tableData: any = [
       }
 
       .title {
-        width: 100%;
+        width: 120px;
+        height: 22px;
+        background: linear-gradient(90deg, #008efb 0%, rgba(0, 59, 104, 0) 100%);
+        border-radius: 2px 0px 0px 2px;
         padding-left: 8px;
-        font-size: 12px;
+        line-height: 21px;
         color: #ffffff;
-        background-image: linear-gradient(90deg, rgba(0, 145, 255, 1), rgba(0, 145, 255, 0));
-        border-radius: 2px;
+        span {
+          font-size: 14px;
+          letter-spacing: 1px;
+          padding-right: 3px;
+          font-weight: bold;
+          background: linear-gradient(180deg, #ffffff 0%, #56d8ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
       .text {
         white-space: nowrap;
+        line-height: 1;
+        padding-top: 9px;
+        .num {
+          font-size: 18px;
+          line-height: 27px;
+          letter-spacing: 1px;
+          background: linear-gradient(180deg, #ffffff 0%, #56d8ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
+        }
       }
 
       .ratio {
         padding-left: 5px;
-        font-size: 12px;
         color: #ffffff;
         white-space: nowrap;
         i.triangle {
@@ -177,44 +205,55 @@ const tableData: any = [
             transform: rotate(180deg);
           }
         }
+        span {
+          display: inline-block;
+          transform: scale(0.8);
+        }
       }
     }
   }
 
   .jam-top {
-    padding: 25px 0;
+    padding: 15px 0 30px;
     font-size: 12px;
-    font-style: italic;
 
     li {
-      height: 45px;
+      padding: 11px 0;
 
       .info-row {
         display: flex;
         justify-content: space-between;
 
         .label {
+          font-size: 14px;
           padding-left: 10px;
-          color: #ffffff;
+          color: #eff8ff;
         }
         .linear-text {
+          font-size: 18px;
           padding-right: 2px;
+          letter-spacing: 1px;
+
+          background: linear-gradient(180deg, #ffffff 0%, #56d8ff 100%);
+          -webkit-background-clip: text;
+          -webkit-text-fill-color: transparent;
         }
       }
 
       .bar-row {
-        height: 7px;
+        height: 8px;
         margin-top: 2px;
-        background-color: #274d6f;
+        background-color: rgba(113, 166, 204, 0.3);
         box-shadow: 0 0 2px rgba(0, 0, 0, 0.2);
 
         .bar {
           height: 100%;
+          background-color: rgba(255, 255, 255, 0.8);
           background-image: linear-gradient(
             90deg,
-            #208cc5 0%,
-            #208cc5 calc(100% - 16px),
-            #a3dae6 100%
+            rgba(28, 181, 255, 0.8) 0%,
+            rgba(28, 181, 255, 0.8) calc(100% - 21px),
+            rgba(29, 193, 224, 0) 100%
           );
         }
       }
@@ -223,22 +262,26 @@ const tableData: any = [
 
   .real-time-alarm {
     color: #ffffff;
-    font-style: italic;
-    font-size: 12px;
+    font-size: 16px;
     background-image: url('/src/assets/imgs/table_bg.png');
     background-size: 100% auto;
-    height: 205px;
-    margin-top: 15px;
+    margin-top: 25px;
     table {
       width: 100%;
       text-align: center;
     }
+    tr {
+      td:first-of-type {
+        font-family: D-DIN;
+      }
+    }
     th {
       font-weight: bold;
-      height: 32px;
+      letter-spacing: 1px;
+      height: 43px;
     }
     td {
-      height: 34px;
+      height: 45px;
     }
   }
 }

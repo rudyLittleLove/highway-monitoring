@@ -85,6 +85,17 @@ onUnmounted(() => {
   background-image: url('/src/assets/imgs/screen_bg.png');
   background-size: 100% 100%;
 
+  @font-face {
+    font-family: 'JiangChengXieHei-500W';
+    src: url('/src/assets/font/jiangchengxiehei.ttf') format('truetype');
+  }
+  @font-face {
+    font-family: 'D-DIN';
+    src: url('/src/assets/font/D-Din/D-DIN.ttf') format('truetype');
+  }
+
+  font-family: JiangChengXieHei-500W;
+
   .cockpit-header {
     height: 182px;
     background-image: url('/src/assets/imgs/banner_bg.png');
@@ -107,7 +118,6 @@ onUnmounted(() => {
         height: 100%;
         padding-top: 20px;
         line-height: 1;
-        font-style: italic;
         color: #9bb5db;
         text-align: center;
         cursor: pointer;

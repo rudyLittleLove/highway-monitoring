@@ -36,17 +36,24 @@ const chartData1: EChartsOption = {
     icon: 'path://M512 1024C229.230208 1024 0 794.769792 0 512 0 229.230208 229.230208 0 512 0 794.769792 0 1024 229.230208 1024 512 1024 794.769792 794.769792 1024 512 1024ZM512 960C759.423565 960 960 759.423565 960 512 960 264.576432 759.423565 64 512 64 264.576432 64 64 264.576432 64 512 64 759.423565 264.576432 960 512 960ZM512 832C688.731117 832 832 688.731117 832 512 832 335.26888 688.731117 192 512 192 335.26888 192 192 335.26888 192 512 192 688.731117 335.26888 832 512 832Z',
     bottom: 0,
     itemWidth: 14,
+    itemGap: 20,
     padding: 0,
     textStyle: {
       color: '#ffffff',
-      fontSize: 10
+      fontSize: 12,
+      padding: [0, 0, -2, 0],
+      rich: {
+        a: {
+          verticalAlign: 'bottom'
+        }
+      }
     }
   },
   grid: {
     top: '10px',
     left: 0,
     right: '20px',
-    bottom: '25px',
+    bottom: '35px',
     containLabel: true
   },
   xAxis: {
@@ -59,7 +66,8 @@ const chartData1: EChartsOption = {
       }
     },
     axisLabel: {
-      color: '#d4dcea'
+      color: '#E2EAFF',
+      fontSize: 14
     },
     axisTick: {
       show: false
@@ -68,7 +76,8 @@ const chartData1: EChartsOption = {
   yAxis: {
     type: 'value',
     axisLabel: {
-      color: '#e4ebfb'
+      color: '#E2EAFF',
+      fontSize: 14
     },
     splitLine: {
       lineStyle: {
@@ -98,43 +107,50 @@ const percent: any = [
     label: '车辆逆行',
     value: '28',
     ratio: '28%',
-    color: ['#1387d5', '#1387d533']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, #22AAFF 0%, rgba(0,132,231,0.23) 100%);',
+    color: 'rgba(25, 151, 230, 0.2500)'
   },
   {
     label: '行人闯入',
     value: '12',
     ratio: '12%',
-    color: ['#699cdd', '#699cdd33']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
+    color: 'rgba(0, 222, 255, 0.2000)'
   },
   {
     label: '占用应急车道',
     value: '5',
     ratio: '5%',
-    color: ['#b0b533', '#b0b53333']
+    linear: 'linear-gradient(180deg, rgba(255,253,0,0.69) 0%, rgba(255,252,192,0.3) 100%);',
+    color: 'rgba(255, 176, 0, 0.2000)'
   },
   {
     label: '道路堵塞',
     value: '9',
     ratio: '9%',
-    color: ['#da704c', '#da704c33']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
+    color: 'rgba(0, 222, 255, 0.2000)'
   },
   {
     label: '非法停车',
     value: '2',
     ratio: '2%',
-    color: ['#3d81e4', '#3d81e433']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
+    color: 'rgba(0, 222, 255, 0.2000)'
   },
   {
     label: '交通事故',
     value: '18',
     ratio: '18%',
-    color: ['#00d8eb', '#00d8eb33']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
+    color: 'rgba(0, 222, 255, 0.2000)'
   },
   {
     label: '交通事件总数',
     value: '50',
     ratio: '72',
-    color: ['#1488d6', '#1488d633']
+    linear: 'linear-gradient(180deg, #00F1FF 0%, #22AAFF 0%, rgba(0,132,231,0.23) 100%);',
+    color: 'rgba(25, 151, 230, 0.2500)'
   }
 ]
 
@@ -148,18 +164,25 @@ const chartData2: EChartsOption = {
     data: chartOriginData.map((v: any) => v.label),
     icon: 'path://M512 1024C229.230208 1024 0 794.769792 0 512 0 229.230208 229.230208 0 512 0 794.769792 0 1024 229.230208 1024 512 1024 794.769792 794.769792 1024 512 1024ZM512 960C759.423565 960 960 759.423565 960 512 960 264.576432 759.423565 64 512 64 264.576432 64 64 264.576432 64 512 64 759.423565 264.576432 960 512 960ZM512 832C688.731117 832 832 688.731117 832 512 832 335.26888 688.731117 192 512 192 335.26888 192 192 335.26888 192 512 192 688.731117 335.26888 832 512 832Z',
     bottom: 0,
+    itemGap: 20,
     itemWidth: 14,
     padding: 0,
     textStyle: {
       color: '#ffffff',
-      fontSize: 10
+      fontSize: 12,
+      padding: [0, 0, -2, 0],
+      rich: {
+        a: {
+          verticalAlign: 'bottom'
+        }
+      }
     }
   },
   grid: {
     top: '10px',
     left: 0,
     right: '20px',
-    bottom: '25px',
+    bottom: '35px',
     containLabel: true
   },
   xAxis: {
@@ -172,7 +195,8 @@ const chartData2: EChartsOption = {
       }
     },
     axisLabel: {
-      color: '#d4dcea'
+      color: '#d4dcea',
+      fontSize: 14
     },
     axisTick: {
       show: false
@@ -187,7 +211,8 @@ const chartData2: EChartsOption = {
   yAxis: {
     type: 'value',
     axisLabel: {
-      color: '#e4ebfb'
+      color: '#e4ebfb',
+      fontSize: 14
     },
     splitLine: {
       lineStyle: {
@@ -227,10 +252,12 @@ const chartData2: EChartsOption = {
 
 <template>
   <div class="right-column">
-    <div class="item-title">断面通行车辆数</div>
+    <div class="item-title">
+      <span>断面通行车辆数</span>
+    </div>
     <div class="passing-cars">
       <div class="chart-header">
-        <div class="chart-title linear-text">断面车流量（辆）</div>
+        <div class="chart-title">断面车流量（辆）</div>
         <div class="tab-switch">
           <div class="active">上行方向</div>
           <div>下行方向</div>
@@ -238,22 +265,26 @@ const chartData2: EChartsOption = {
       </div>
       <Echart :options="chartData1" :height="200" />
     </div>
-    <div class="item-title">交通事件占比</div>
+    <div class="item-title">
+      <span>交通事件占比</span>
+    </div>
     <div class="traffic-incidents-percent">
       <ul>
         <li
           v-for="(item, i) in percent"
           :key="i"
-          :style="`width: ${item.value * 1.5}px;height: ${item.value * 1.5}px; background-color: ${
-            item.color[0]
-          }; outline: ${5 * (item.value / 80 + 1)}px solid ${item.color[1]}`"
+          :style="`width: ${item.value * 2}px;height: ${item.value * 2}px; background-image: ${
+            item.linear
+          }; outline: ${5 * (item.value / 80 + 1)}px solid ${item.color}`"
         >
           <span class="value" :style="`font-size: ${item.value / 2}px`">{{ item.ratio }}</span>
           <span class="label">{{ item.label }}</span>
         </li>
       </ul>
     </div>
-    <div class="item-title">车型分布</div>
+    <div class="item-title">
+      <span>车型分布</span>
+    </div>
     <div class="car-type-distribute">
       <div class="chart-header">
         <div class="chart-title linear-text">车辆数（辆）</div>
@@ -263,35 +294,41 @@ const chartData2: EChartsOption = {
           <div>货车</div>
         </div>
       </div>
-      <Echart :options="chartData2" :height="150" />
+      <Echart :options="chartData2" :height="200" />
     </div>
   </div>
 </template>
 
 <style lang="less" scoped>
 .right-column {
-  width: 400px;
-  padding: 20px 25px;
+  width: 532px;
+  padding: 20px 34px;
   background-image: url('/src/assets/imgs/L.png');
   background-size: 100% 100%;
 
   .chart-header {
     display: flex;
     justify-content: space-between;
-    padding-top: 10px;
-    padding-bottom: 10px;
-    font-style: italic;
+    padding-top: 20px;
+    padding-bottom: 20px;
     .chart-title {
-      font-size: 12px;
+      font-size: 14px;
+      font-weight: bold;
+
+      letter-spacing: 1px;
+      background: linear-gradient(180deg, #f8f9fa 0%, #8ae4ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
     }
     .tab-switch {
       display: flex;
-      font-size: 12px;
+      font-size: 14px;
       color: #ffffff;
       > div {
         padding-right: 3px;
-        width: 75px;
-        margin-right: -15px;
+        height: 20px;
+        width: 90px;
+        margin-right: -10px;
         text-align: center;
         cursor: pointer;
         &:not(.active) {
@@ -307,14 +344,15 @@ const chartData2: EChartsOption = {
     }
   }
   .passing-cars {
-    margin-bottom: 20px;
+    margin-bottom: 40px;
   }
 
   .traffic-incidents-percent {
-    height: 150px;
+    height: 182px;
     background-image: url('/src/assets/imgs/bubble_bg.png');
     background-size: 100% 100%;
     margin-bottom: 20px;
+    margin-top: 20px;
     > ul {
       width: 100%;
       height: 100%;

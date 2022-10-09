@@ -23,17 +23,20 @@ import RightColumn from './RightColumn.vue'
   }
 
   :deep(.item-title) {
-    height: 35px;
-    padding-left: 40px;
+    height: 40px;
+    padding-left: 60px;
     margin-left: -10px;
-    font-style: italic;
-    font-weight: bold;
     letter-spacing: 2px;
-    color: #fffffb;
-    text-shadow: 2px 2px 1px #000000;
     background-image: url('/src/assets/imgs/item_title_bg.png');
     background-repeat: no-repeat;
     background-size: 100% auto;
+    span {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 1;
+      color: #fffffb;
+      text-shadow: 0px 3px 0px #233444;
+    }
   }
 
   :deep(.linear-text) {

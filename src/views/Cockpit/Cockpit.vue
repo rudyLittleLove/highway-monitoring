@@ -93,6 +93,10 @@ onUnmounted(() => {
     font-family: 'D-DIN';
     src: url('/src/assets/font/D-Din/D-DIN.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'pangmen';
+    src: url('/src/assets/font/pangmengzhengdaobiaoti.ttf') format('truetype');
+  }
 
   font-family: JiangChengXieHei-500W;
 

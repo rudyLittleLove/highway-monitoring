@@ -25,6 +25,9 @@ defineProps({
 
 const dialogVisible = ref<boolean>(false)
 
+const tabs = ['报警视频', '图片']
+const active = ref<number>(1)
+
 // 立即处理弹窗
 const immediateHandle = () => {
   dialogVisible.value = true
@@ -89,7 +92,21 @@ const handleClose = () => {
           </li>
         </ul>
       </div>
-      <div class="tab-column"></div>
+      <div class="tab-column">
+        <div class="tab-box">
+          <ul>
+            <li
+              v-for="(item, i) in tabs"
+              :key="i"
+              :class="{ active: active === i + 1 }"
+              @click="active = i + 1"
+            >
+              <span>{{ item }}</span>
+            </li>
+          </ul>
+        </div>
+        <div class="video-box"></div>
+      </div>
     </div>
     <template #footer>
       <span class="dialog-footer">
@@ -203,7 +220,57 @@ const handleClose = () => {
       }
     }
     .tab-column {
-      width: calc(100% - 300px);
+      width: 393px;
+      margin-left: 30px;
+      padding-top: 25px;
+      .tab-box {
+        height: 25px;
+        background-image: url('/src/assets/imgs/tab_bg1.png');
+        background-size: auto 100%;
+        ul {
+          display: flex;
+          height: 100%;
+        }
+        li {
+          height: 100%;
+          width: 119px;
+          background-size: auto 100%;
+          padding-top: 1px;
+          cursor: pointer;
+
+          span {
+            font-size: 15px;
+            font-family: pangmen;
+
+            background: linear-gradient(180deg, #ffffff 0%, #56d8ff 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+          }
+          &:nth-of-type(1) {
+            text-indent: 20px;
+            &:hover,
+            &.active {
+              background-image: url('/src/assets/imgs/tab_bg1_active.png');
+            }
+          }
+          &:nth-of-type(2) {
+            margin-left: -25px;
+            text-align: center;
+            background-image: url('/src/assets/imgs/tab_bg2.png');
+            &:hover,
+            &.active {
+              background-image: url('/src/assets/imgs/tab_bg2_active.png');
+            }
+          }
+        }
+      }
+
+      .video-box {
+        height: 241px;
+        margin-top: 8px;
+
+        background-color: #ffffff;
+      }
     }
   }
   .dialog-footer {

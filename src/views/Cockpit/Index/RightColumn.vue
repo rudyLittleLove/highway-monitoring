@@ -107,50 +107,50 @@ const percent: any = [
     label: '车辆逆行',
     value: '28',
     ratio: '28%',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, #22AAFF 0%, rgba(0,132,231,0.23) 100%);',
-    color: 'rgba(25, 151, 230, 0.2500)'
+    linear: 'linear-gradient(180deg, #20A6FA 0%, rgba(0, 132, 231, 0.3) 100%);',
+    color: 'rgba(25, 151, 230, 0.2)'
   },
   {
     label: '行人闯入',
     value: '12',
     ratio: '12%',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
-    color: 'rgba(0, 222, 255, 0.2000)'
+    linear: 'linear-gradient(180deg, #9AC3FF  0%, rgba(62, 78, 134, 0.6) 100%);',
+    color: 'rgba(154, 195, 255, 0.2)'
   },
   {
     label: '占用应急车道',
     value: '5',
     ratio: '5%',
-    linear: 'linear-gradient(180deg, rgba(255,253,0,0.69) 0%, rgba(255,252,192,0.3) 100%);',
-    color: 'rgba(255, 176, 0, 0.2000)'
+    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0, 222, 255, 0.3) 100%);',
+    color: 'rgba(0, 222, 255, 0.2)'
   },
   {
     label: '道路堵塞',
     value: '9',
     ratio: '9%',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
-    color: 'rgba(0, 222, 255, 0.2000)'
+    linear: 'linear-gradient(180deg, #FF7F50 0%, rgba(255, 127, 80, 0.3) 100%);',
+    color: 'rgba(255, 127, 80, 0.2)'
   },
   {
     label: '非法停车',
     value: '2',
     ratio: '2%',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
-    color: 'rgba(0, 222, 255, 0.2000)'
+    linear: 'linear-gradient(180deg, #DDDB00 0%, rgba(166, 157, 0, 0.3) 100%);',
+    color: 'rgba(255, 253, 0, 0.2)'
   },
   {
     label: '交通事故',
     value: '18',
     ratio: '18%',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, rgba(0,222,255,0.3) 100%);',
-    color: 'rgba(0, 222, 255, 0.2000)'
+    linear: 'linear-gradient(180deg, #9AC3FF  0%, rgba(62, 78, 134, 0.6) 100%);',
+    color: 'rgba(154, 195, 255, 0.2)'
   },
   {
     label: '交通事件总数',
     value: '50',
     ratio: '72',
-    linear: 'linear-gradient(180deg, #00F1FF 0%, #22AAFF 0%, rgba(0,132,231,0.23) 100%);',
-    color: 'rgba(25, 151, 230, 0.2500)'
+    linear: 'linear-gradient(180deg, #20A6FA 0%, rgba(0, 132, 231, 0.3) 100%);',
+    color: 'rgba(25, 151, 230, 0.2)'
   }
 ]
 
@@ -362,7 +362,6 @@ const chartData2: EChartsOption = {
         position: absolute;
         min-width: 20px;
         min-height: 20px;
-        background-color: blue;
         text-align: center;
         .value {
           color: #ffffff;

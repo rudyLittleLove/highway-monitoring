@@ -1,22 +1,17 @@
 <script setup lang="ts">
 // import { usePermissionStore } from '@/store/modules/permission'
 // import { useRouter } from 'vue-router'
-// import { useRouter } from 'vue-router'
 import LeftColumn from './LeftColumn.vue'
-import CenterColumn from './CenterColumn.vue'
-import RightColumn from './RightColumn.vue'
 </script>
 
 <template>
-  <div class="cockpit-index columns">
+  <div class="cockpit-monitor columns">
     <LeftColumn />
-    <CenterColumn />
-    <RightColumn />
   </div>
 </template>
 
 <style lang="less" scoped>
-.cockpit-index {
+.cockpit-monitor {
   height: 100%;
   padding: 30px 46px;
 

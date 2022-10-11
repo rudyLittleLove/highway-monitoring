@@ -3,6 +3,8 @@ import { ref, onUnmounted } from 'vue'
 import ToolHeader from '@/layout/components/ToolHeader.vue'
 import dayjs from 'dayjs'
 import { ElDivider } from 'element-plus'
+import { useRouter } from 'vue-router'
+const { push } = useRouter()
 
 const time = ref<string>('')
 const week = ref<string>('')
@@ -22,6 +24,10 @@ const getNewDate: () => void = () => {
   }, 1000)
 }
 getNewDate()
+
+const pushHandle = (path: string) => {
+  push(path)
+}
 
 // 自适应页面
 const scaleStyle = ref<string>('')
@@ -48,8 +54,8 @@ onUnmounted(() => {
         <img src="/src/assets/imgs/icon_title.png" alt="" class="h-58px ml-46px mt-10px" />
         <div class="cockpit-menu">
           <ul>
-            <li class="active">首页</li>
-            <li>综合态势</li>
+            <li class="active" @click="pushHandle('/cockpit/index')">首页</li>
+            <li @click="pushHandle('/cockpit/monitor')">综合态势</li>
             <li>交通事件</li>
             <li>系统设置</li>
           </ul>
@@ -186,6 +192,23 @@ onUnmounted(() => {
         height: auto;
         margin-top: -3px;
       }
+    }
+  }
+
+  :deep(.item-title) {
+    height: 40px;
+    padding-left: 60px;
+    margin-left: -10px;
+    letter-spacing: 2px;
+    background-image: url('/src/assets/imgs/item_title_bg.png');
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+    span {
+      font-weight: bold;
+      font-size: 24px;
+      line-height: 1;
+      color: #fffffb;
+      text-shadow: 0px 3px 0px #233444;
     }
   }
 

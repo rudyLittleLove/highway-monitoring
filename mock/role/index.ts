@@ -466,6 +466,8 @@ const adminList = [
 ]
 
 const testList: string[] = [
+  // '/cockpit',
+  // '/cockpit/index',
   '/dashboard',
   '/dashboard/analysis',
   '/dashboard/workplace',

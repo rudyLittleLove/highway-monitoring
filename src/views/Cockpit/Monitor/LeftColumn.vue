@@ -8,10 +8,7 @@
     <div class="card-box" v-for="i in 4" :key="i">
       <div class="header">
         <span class="text">Camera 01 隰县北互通上行方向 出口</span>
-        <span>
-          <Icon icon="ep:top-right" />
-          <Icon icon="ep:bottom-left" />
-        </span>
+        <span> <img src="/src/assets/imgs/scale_icon.png" class="scale-icon" alt="" /> </span>
       </div>
       <div class="view-box"></div>
     </div>
@@ -30,13 +27,20 @@
     margin-bottom: 14px;
     .header {
       height: 30px;
-      background-image: linear-gradient(-90deg, rgba(0, 48, 103, 0.21), rgba(0, 36, 67, 0.92)),
-        url('/src/assets/imgs/item_title_blu_bg.png');
+      background-image: url('/src/assets/imgs/item_title_blu_bg.png'),
+        linear-gradient(-90deg, rgba(0, 48, 103, 0.21), rgba(0, 36, 67, 0.92));
       background-size: auto 100%;
       background-repeat: no-repeat;
       padding-top: 3px;
       position: relative;
 
+      .scale-icon {
+        width: 12px;
+        height: 12px;
+        cursor: pointer;
+        margin: 6px 9px 0 0;
+        float: right;
+      }
       .text {
         font-size: 14px;
         letter-spacing: 1px;

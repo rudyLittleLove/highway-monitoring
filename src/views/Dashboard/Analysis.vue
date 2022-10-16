@@ -100,6 +100,10 @@ getAllApi()
 </script>
 
 <template>
+  <div>首页</div>
+</template>
+
+<!-- <template>
   <PanelGroup />
   <ElRow :gutter="20" justify="space-between">
     <ElCol :xl="10" :lg="10" :md="24" :sm="24" :xs="24">
@@ -124,4 +128,4 @@ getAllApi()
       </ElCard>
     </ElCol>
   </ElRow>
-</template>
+</template> -->

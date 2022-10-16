@@ -103,6 +103,10 @@ onUnmounted(() => {
     font-family: 'pangmen';
     src: url('/src/assets/font/pangmengzhengdaobiaoti.ttf') format('truetype');
   }
+  @font-face {
+    font-family: 'siyuan';
+    src: url('/src/assets/font/SiYuanHeiTi-Normal/SourceHanSansSC-Normal-2.otf');
+  }
 
   font-family: JiangChengXieHei-500W;
 

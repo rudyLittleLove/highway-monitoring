@@ -59,7 +59,8 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
     redirect: '/cockpit/index',
     name: 'Cockpit',
     meta: {
-      title: '驾驶舱'
+      title: '首页',
+      icon: 'ant-design:home-outlined'
     },
     children: [
       {
@@ -68,7 +69,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         name: 'CockpitIndex',
         meta: {
           title: '驾驶舱首页',
-          icon: 'clarity:document-solid'
+          icon: 'ep:house'
         }
       },
       {
@@ -77,7 +78,7 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
         name: 'CockpitMonitor',
         meta: {
           title: '驾驶舱监控',
-          icon: 'clarity:document-solid'
+          icon: 'ep:monitor'
         }
       }
     ]
@@ -86,37 +87,58 @@ export const constantRouterMap: AppRouteRecordRaw[] = [
 
 export const asyncRouterMap: AppRouteRecordRaw[] = [
   {
-    path: '/dashboard',
+    path: '/comp-situational',
     component: Layout,
-    redirect: '/dashboard/analysis',
-    name: 'Dashboard',
+    redirect: '/comp-situational/road-to',
+    name: 'ComprehensiveSituational',
     meta: {
-      title: t('router.dashboard'),
-      icon: 'ant-design:dashboard-filled',
+      title: '综合态势',
+      icon: 'ant-design:fund-view-outlined',
       alwaysShow: true
     },
     children: [
       {
-        path: 'analysis',
-        component: () => import('@/views/Dashboard/Analysis.vue'),
-        name: 'Analysis',
+        path: 'road-to',
+        component: () => import('@/views/Comprehensive/RoadTo.vue'),
+        name: 'RoadTo',
         meta: {
-          title: t('router.analysis'),
-          noCache: true,
-          affix: true
-        }
-      },
-      {
-        path: 'workplace',
-        component: () => import('@/views/Dashboard/Workplace.vue'),
-        name: 'Workplace',
-        meta: {
-          title: t('router.workplace'),
-          noCache: true
+          title: '道路研判'
         }
       }
     ]
   }
+  // {
+  //   path: '/dashboard',
+  //   component: Layout,
+  //   redirect: '/dashboard/analysis',
+  //   name: 'Dashboard',
+  //   meta: {
+  //     title: t('router.dashboard'),
+  //     icon: 'ant-design:dashboard-filled',
+  //     alwaysShow: true
+  //   },
+  //   children: [
+  //     {
+  //       path: 'analysis',
+  //       component: () => import('@/views/Dashboard/Analysis.vue'),
+  //       name: 'Analysis',
+  //       meta: {
+  //         title: t('router.analysis'),
+  //         noCache: true,
+  //         affix: true
+  //       }
+  //     },
+  //     {
+  //       path: 'workplace',
+  //       component: () => import('@/views/Dashboard/Workplace.vue'),
+  //       name: 'Workplace',
+  //       meta: {
+  //         title: t('router.workplace'),
+  //         noCache: true
+  //       }
+  //     }
+  //   ]
+  // }
   // {
   //   path: '/external-link',
   //   component: Layout,

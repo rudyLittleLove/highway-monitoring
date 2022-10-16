@@ -24,7 +24,7 @@ const getCaches = computed((): string[] => {
     :class="[
       'p-[var(--app-content-padding)] w-[100%] bg-[var(--app-content-bg-color)] dark:bg-[var(--el-bg-color)]',
       {
-        '!min-h-[calc(100%-var(--app-footer-height))]':
+        '!h-[calc(100%-var(--app-footer-height))]':
           fixedHeader && (layout === 'classic' || layout === 'topLeft') && footer,
 
         '!min-h-[calc(100%-var(--tags-view-height)-var(--top-tool-height)-var(--app-footer-height))]':

@@ -172,7 +172,7 @@ defineProps({
 
     .connect-link {
       width: 78px;
-      height: 205px;
+      height: 170px;
       border-top: 1px solid #12d5ff;
       border-right: 1px solid #12d5ff;
       position: absolute;

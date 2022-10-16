@@ -55,7 +55,7 @@ onUnmounted(() => {
         <div class="cockpit-menu">
           <ul>
             <li class="active" @click="pushHandle('/cockpit/index')">首页</li>
-            <li @click="pushHandle('/cockpit/monitor')">综合态势</li>
+            <li @click="pushHandle('/comp-situational')">综合态势</li>
             <li>交通事件</li>
             <li>系统设置</li>
           </ul>

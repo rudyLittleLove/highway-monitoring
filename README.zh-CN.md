@@ -65,7 +65,7 @@ git clone https://github.com/kailong321200875/vue-element-plus-admin.git
 - 安装依赖
 
 ```bash
-cd vue-element-plus-admin
+cd highway-monitoring
 
 pnpm install
 
